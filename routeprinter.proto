@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package routeprinter;
+
+message PrintableRoute {
+  string route = 1;
+  int32 status = 2;
+}
+
+message PrintRouteResponse {
+    int32 success = 1;
+}
+
+service RoutePrinter {
+    rpc PrintRoute(PrintableRoute) returns (PrintRouteResponse) {}
+}
